@@ -16,6 +16,14 @@ headers = {
 
 # set cookies
 cookies = {
+    "_ga": "",
+    "_ga_J6J9PS1H9S": "",
+    "c_lang_folder": "cht",
+    "c_secure_login": "",
+    "c_secure_pass": "",
+    "c_secure_ssl": "",
+    "c_secure_tracker_ssl": "",
+    "c_secure_uid": ""
 }
 
 
