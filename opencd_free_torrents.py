@@ -60,6 +60,7 @@ def get_download_torrent_url(download_urls, cookies, headers):
 
 
 def download_torrent(download_torrent_urls):
+    download_dir = os.path.dirname(__file__)
     for url in download_torrent_urls:
         try:
             response = requests.get(url=url, headers=headers, cookies=cookies)
@@ -68,8 +69,8 @@ def download_torrent(download_torrent_urls):
         if response.status_code == 200:
             h = response.headers['content-disposition']
             file_name = re.split(r'[;=]', h)[2].strip('" ').encode("ISO-8859-1").decode()
-            if not os.path.exists(file_name):
-                with open(file_name, 'wb') as f:
+            if not os.path.exists(f'{download_dir}/{file_name}'):
+                with open(f'{download_dir}/{file_name}', 'wb') as f:
                     f.write(response.content)
                     print(f"{file_name} saved.")
             else:
