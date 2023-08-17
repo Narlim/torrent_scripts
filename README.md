@@ -1,6 +1,7 @@
 # torrent_scripts
 download free torrents
 
+## opencd
 ### set opencd cookies
 ```
 cookies = {
@@ -17,8 +18,23 @@ cookies = {
 
 ### set crontab
 ```
-5/* * * * * python /torrent/opencd_free_torrents.py >> /var/log/download_torrents.log
+5/* * * * * python /torrent/opencd_free_torrents.py >> /var/log/opencd_download_torrents.log
 ```
 
-### set qbittorrent
+## MT
+### set cookies and kind
+```
+kind = "movie.php" # for example
+
+cookies = {
+    "tp": "" # get it from console http request.
+}          
+```
+
+### set crontab
+```
+5/* * * * * python /torrent/mt_free_torrents.py >> /var/log/mt_download_torrents.log
+```
+
+## set qbittorrent
 设置监控文件夹，会自动下载新增的种子
